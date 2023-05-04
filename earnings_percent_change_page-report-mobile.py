@@ -143,3 +143,6 @@ st.markdown('''
 ''',unsafe_allow_html=True)
 
 st.divider() ## DIVIDER ##
+st.text('---')
+st.text('---')
+st.text('---')
