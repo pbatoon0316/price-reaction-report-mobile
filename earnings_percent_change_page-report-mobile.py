@@ -121,8 +121,8 @@ if include_7d:
                       high=stock_data[-50:]['High'],
                       low=stock_data[-50:]['Low'],
                       close=stock_data[-50:]['Close']))
-  candle_fig_7d.add_hline(y=low_7D, line_dash='dash', line_color='red', opacity=0.7, annotation_text=round(low,2), annotation_position='bottom right')
-  candle_fig_7d.add_hline(y=high_7D, line_dash='dash', line_color='teal', opacity=0.7, annotation_text=round(high,2), annotation_position='top right')
+  candle_fig_7d.add_hline(y=low_7D, line_dash='dash', line_color='red', opacity=0.7, annotation_text=round(low_7D,2), annotation_position='bottom right')
+  candle_fig_7d.add_hline(y=high_7D, line_dash='dash', line_color='teal', opacity=0.7, annotation_text=round(high_7D,2), annotation_position='top right')
   candle_fig_7d.update_layout(height=225, margin=dict(l=1, r=1, t=1, b=1), xaxis_rangeslider_visible=False)
   candle_fig_7d.update_xaxes(rangebreaks=[dict(bounds=["sat", "mon"])])
   #candle_fig_7d.update_yaxes(title_text='Price')
