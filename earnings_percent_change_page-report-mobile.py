@@ -105,7 +105,7 @@ st.plotly_chart(candle_fig_1d, use_container_width=True)
 
 ### 7-Days After Earnings
 if include_7d:
-  st.divider()
+  st.divider() ## DIVIDER ##
   avg_7d_move = round(earnings_data['+7D %Change'].mean(), 2)
   std_7d_move = round(earnings_data['+7D %Change'].std(), 2)
   low_7D = stock_data['Close'].iloc[-1] * (1 - earnings_data['+7D %Change'].std()/100)
@@ -114,7 +114,7 @@ if include_7d:
   st.markdown(f'### ${stock_ticker_input.upper()} Expected Move (+7D)')
   st.markdown(f'''
   ##### σ<sub>+7D After Earnings</sub> = ±{std_7d_move}%
-  \\${round(low_7D,2)}-{round(high_7D,2)}''',unsafe_allow_html=True)
+  \\${round(low_7D,2)} through {round(high_7D,2)}''',unsafe_allow_html=True)
 
   candle_fig_7d = go.Figure(data=go.Candlestick(x=stock_data[-50:].index,
                       open=stock_data[-50:]['Open'],
@@ -129,7 +129,7 @@ if include_7d:
   st.plotly_chart(candle_fig_7d, use_container_width=True)
 
 ### Data Table Summary
-st.divider()
+st.divider() ## DIVIDER ##
 if include_7d:
   earnings_data_short = earnings_data[['+1D %Change','+7D %Change']][:5]
   st.table(data=earnings_data_short.round(2).style.format('{:7,.2f}'))
@@ -141,3 +141,5 @@ else:
 st.markdown('''
 <sub>Check the link in profile for more historical earnings price reaction data.👆</sub>
 ''',unsafe_allow_html=True)
+
+st.divider() ## DIVIDER ##
